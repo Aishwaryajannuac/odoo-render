@@ -1,5 +1,8 @@
 FROM odoo:17.0
 
+# Copy odoo config
+COPY odoo.conf /etc/odoo/odoo.conf
+
 EXPOSE 8069
 
-CMD ["odoo"]
+CMD ["odoo", "--config=/etc/odoo/odoo.conf"]
